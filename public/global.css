@@ -1,63 +1,135 @@
-html, body {
+html,
+body {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
 }
 
 body {
-	color: #333;
-	margin: 0;
-	padding: 8px;
+	background-image: url("https://portal.networkindia.com/stars.jpg");
+}
+
+#topbar {
+	width: 100%;
+	height: 50px;
+	background: rgba(21, 22, 21, 0.8);
+	backdrop-filter: blur(10px);
+	padding: 0.5em;
 	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-a {
-	color: rgb(0,100,200);
-	text-decoration: none;
+#tabs {
+	width: 100%;
+	height: 100%;
+	max-width: calc(100% - 70px);
+	display: flex;
+	align-items: center;
 }
 
-a:hover {
-	text-decoration: underline;
-}
-
-a:visited {
-	color: rgb(0,80,160);
-}
-
-label {
-	display: block;
-}
-
-input, button, select, textarea {
-	font-family: inherit;
-	font-size: inherit;
-	-webkit-padding: 0.4em 0;
-	padding: 0.4em;
-	margin: 0 0 0.5em 0;
+.tab {
+	position: relative;
+	background: none;
+	border: 2px solid rgba(0, 0, 0, 0);
+	height: 100%;
+	max-width: 175px;
+	overflow: hidden;
+	width: 100%;
+	border-radius: 0.35rem;
+	display: flex;
+	align-items: center;
+	padding: 0.5em;
 	box-sizing: border-box;
-	border: 1px solid #ccc;
-	border-radius: 2px;
+	animation: tab-creation-animation 75ms;
+	transition: width 75ms;
 }
 
-input:disabled {
-	color: #ccc;
+@keyframes tab-creation-animation {
+	0% {
+		max-width: 0;
+		padding: 0;
+	}
+
+	1% {
+		padding: 0.5em;
+	}
+
+	100% {
+		max-width: 175px;
+	}
 }
 
-button {
-	color: #333;
-	background-color: #f4f4f4;
+.tab:hover {
+	background: rgba(45, 45, 45, 0.5);
+	backdrop-filter: blur(10px);
+}
+
+.tab.active {
+	background: rgba(63, 63, 63, 255);
+	backdrop-filter: blur(10px);
+	border: solid rgba(73, 73, 73, 255) 2px;
+	box-shadow: 5px 5px 15px -9px #000000;
+}
+
+.tab>.favicon {
+	width: 16px;
+	height: 16px;
+	height: 1.5rem;
+	width: 1.5rem;
+	filter: invert(1);
+}
+
+.tab>p {
+	margin: 0 0.5rem;
+	color: lightgray;
+	display: inline;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#settingsandnewtab {
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.25rem;
+	height: 100%;
+	width: 70px;
+}
+
+#settingsandnewtab>button {
+	background: none;
 	outline: none;
+	border: none;
+	border-radius: 0.35rem;
+	padding: 0.5em 0.75em;
 }
 
-button:disabled {
-	color: #999;
+#settingsandnewtab>button:hover {
+	background: rgba(45, 45, 45, 0.5);
+	backdrop-filter: blur(10px);
 }
 
-button:not(:disabled):active {
-	background-color: #ddd;
+#settingsandnewtab>button>i {
+	color: lightgray;
 }
 
-button:focus {
-	border-color: #666;
+iframe,
+#homepage {
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	height: calc(100% - 50px);
+	width: 100%;
+}
+
+iframe {
+	display: none;
+	outline: none;
+	border: none;
 }
