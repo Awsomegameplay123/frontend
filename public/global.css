@@ -9,16 +9,24 @@ body {
 }
 
 body {
-	background-image: url("https://portal.networkindia.com/stars.jpg");
+	background-image: url("stars.jpg");
+	background-size: cover;
+	background-position: 50%;
 }
 
 #topbar {
+	position: relative;
 	width: 100%;
-	height: 50px;
+	height: 85px;
 	background: rgba(21, 22, 21, 0.8);
 	backdrop-filter: blur(10px);
 	padding: 0.5em;
 	box-sizing: border-box;
+}
+
+#tabsandmore {
+	position: relative;
+	height: 52.5%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -70,9 +78,9 @@ body {
 }
 
 .tab.active {
-	background: rgba(63, 63, 63, 255);
+	background: rgba(63, 63, 63, 0.85);
 	backdrop-filter: blur(10px);
-	border: solid rgba(73, 73, 73, 255) 2px;
+	border: solid rgba(73, 73, 73, 0.8) 2px;
 	box-shadow: 5px 5px 15px -9px #000000;
 }
 
@@ -119,12 +127,40 @@ body {
 	color: lightgray;
 }
 
+#urlbar {
+	position: relative;
+	margin-top: 0.4rem;
+	height: calc(47.2% - 0.4rem);
+	width: 100%;
+}
+
+#urlbar input {
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	border-radius: 5rem;
+	background: rgba(55, 55, 55, 0.85);
+	backdrop-filter: blur(10px);
+	color: white;
+	text-align: center;
+	outline: none;
+}
+
+#urlbar input:hover {
+	outline: 0.1rem solid #656565;
+}
+
+#urlbar input:focus {
+	outline: 0.1rem solid #64ade5;
+}
+
 iframe,
 #homepage {
 	position: absolute;
-	top: 50px;
+	top: 85px;
 	left: 0px;
-	height: calc(100% - 50px);
+	height: calc(100% - 85px);
 	width: 100%;
 }
 
