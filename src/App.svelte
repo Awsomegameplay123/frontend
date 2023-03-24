@@ -94,7 +94,7 @@
       {/each}
     </div>
     <div id="settingsandnewtab">
-       <button onclick="go('https://discord.gg/goabyss/');">
+<button on:click={() => go('https://discord.gg/goabyss')}>
         <i class="fa-brands fa-discord" />
       </button>
       <button id="settingsbutton">
