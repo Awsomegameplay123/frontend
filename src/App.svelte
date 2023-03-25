@@ -96,7 +96,7 @@
     
     <div id="settingsandnewtab">
 <button on:click={() => window.open(document.querySelector('.iframe.active').src, '_blank');}>
-        <i class="fa-brands fa-discord" />
+        <i class="fa-solid fa-copy" />
       </button>
 <button on:click={() => go('https://discord.gg/goabyss');}>
         <i class="fa-brands fa-discord" />
