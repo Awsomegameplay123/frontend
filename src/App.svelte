@@ -93,8 +93,12 @@
         </button>
       {/each}
     </div>
+    
     <div id="settingsandnewtab">
-<button on:click={() => go('https://discord.gg/goabyss')}>
+<button on:click={() => window.open(document.querySelector('.iframe.active').src, '_blank');}>
+        <i class="fa-brands fa-discord" />
+      </button>
+<button on:click={() => go('https://discord.gg/goabyss');}>
         <i class="fa-brands fa-discord" />
       </button>
       <button id="settingsbutton">
