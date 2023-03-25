@@ -23,7 +23,7 @@
     url = __uv$config.encodeUrl(url);
 
     activeIframe.style.display = "block";
-    activeIframe.src = "/service/" + url;
+    activeIframe.src = "/go/" + url;
 
     inputurl = __uv$config.decodeUrl(url);
   }
@@ -95,10 +95,10 @@
     </div>
     
     <div id="settingsandnewtab">
-<button on:click={() => window.open(document.querySelector('.iframe.active').src, '_blank');}>
+<button on:click={() => window.open(document.querySelector('iframe.active').src, '_blank')}>
         <i class="fa-solid fa-copy" />
       </button>
-<button on:click={() => go('https://discord.gg/goabyss');}>
+<button on:click={() => go('https://discord.gg/goabyss')}>
         <i class="fa-brands fa-discord" />
       </button>
       <button id="settingsbutton">
