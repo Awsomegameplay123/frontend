@@ -23,7 +23,7 @@
     url = __uv$config.encodeUrl(url);
 
     activeIframe.style.display = "block";
-    activeIframe.src = "/go/" + url;
+    activeIframe.src = "/service/" + url;
 
     inputurl = __uv$config.decodeUrl(url);
   }
