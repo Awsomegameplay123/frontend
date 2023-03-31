@@ -14,6 +14,17 @@
     return false;
   }
 
+  function popOut() {
+    var win = window.open();
+    var url = document.querySelector('iframe.active').src;
+    var iframe = win.document.createElement('iframe');
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.border = "none";
+    iframe.src = url;
+    win.document.body.appendChild(iframe);
+  }
+
   function go(value) {
     let url = value.trim();
     if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
@@ -23,7 +34,7 @@
     url = __uv$config.encodeUrl(url);
 
     activeIframe.style.display = "block";
-    activeIframe.src = "/service/" + url;
+    activeIframe.src = "/go/" + url;
 
     inputurl = __uv$config.decodeUrl(url);
   }
@@ -38,6 +49,8 @@
 
   let tabs = [];
   let iframes = [];
+
+
 </script>
 
 <div id="topbar">
@@ -95,18 +108,19 @@
     </div>
     
     <div id="settingsandnewtab">
-<button on:click={() => window.open(document.querySelector('iframe.active').src, '_blank')}>
+<button on:click={() => popOut()}>
         <i class="fa-solid fa-copy" />
       </button>
 <button on:click={() => go('https://discord.gg/goabyss')}>
         <i class="fa-brands fa-discord" />
       </button>
-      <button id="settingsbutton">
+       <button on:click={() => 				alert("There are currently no settings implemented! Come back soon!")     }>
         <i class="fa-solid fa-gear" />
-      </button>
+       </button>
       <button
         id="newtabbutton"
         on:click={() => {
+
           let newnextid = nextid;
           let newtabsandiframes = [...tabsandiframes, newnextid];
           tabsandiframes = newtabsandiframes;
@@ -116,6 +130,7 @@
               window.setTimeout(checkIfTabExists, 50);
             } else {
               document.querySelector("#tab" + newnextid).click();
+              
               go("https://google.com");
             }
           }
