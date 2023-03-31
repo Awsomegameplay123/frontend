@@ -2,41 +2,6 @@
 <html lang="en">
 
 <head>
-	<script>function blank() {
-		let inFrame
-		try {
-			inFrame = window !== top
-		} catch (e) {
-			inFrame = true
-		}
-		if (!inFrame && !navigator.userAgent.includes("Firefox")) {
-			const popup = open("about:blank", "_blank")
-			if (!popup || popup.closed) {
-				alert("Popups are disabled!");
-				var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-    link.type = 'image/x-icon';
-    link.rel = 'shortcut icon';
-    link.href = 'https://ssl.gstatic.com/classroom/favicon.png';
-	document.title = 'Google Classroom';
-    document.getElementsByTagName('head')[0].appendChild(link);
-			} else {
-				const doc = popup.document
-				const iframe = doc.createElement("iframe")
-				const style = iframe.style
-				const link = doc.createElement("link")
-				doc.title = "Loading..."
-				link.rel = "icon";
-				link.href = "https://ssl.gstatic.com/classroom/favicon.png";
-				iframe.src = location.href
-				style.position = "fixed"
-				style.top = style.bottom = style.left = style.right = 0
-				style.border = style.outline = "none"
-				style.width = style.height = "100%"
-				doc.body.appendChild(iframe)
-				location.replace("https://schoology.com")
-			}
-		}
-	  }</script>
 		<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width,initial-scale=1'>
 
