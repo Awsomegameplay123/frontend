@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 html,
 body {
 	position: relative;
@@ -177,6 +179,52 @@ iframe {
 	display: none;
 	outline: none;
 	border: none;
+}
+#settingsbackground {
+	position: absolute;
+	display: none;
+	top: 85px;
+	width: 100%;
+	height: calc(100% - 85px);
+	background-color: FFFFFF;
+	backdrop-filter: blur(5px);
+}
+#settings  {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	background-color: black;
+	border-radius: 30px;
+}
+#settingstext {
+	color: white;
+	font-size: 45px;
+	font-family: "Roboto";
+}
+#settingsform input{
+	background: black;
+	width: 80%;
+	height: 25px;
+	color: white;
+	text-align: center;
+	border-radius: 10px;
+
+}
+#settingsform button{
+	background: black;
+	width: 80%;
+	height: 25px;
+	color: white;
+	text-align: center;
+	border-radius: 10px;
+}
+#settingsform p{
+	color: grey;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 @media screen and (max-width: 480px) {
   #p_5821135 {
