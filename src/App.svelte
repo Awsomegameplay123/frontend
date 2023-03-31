@@ -55,7 +55,9 @@
     iframe.style.height = "100%";
     iframe.style.border = "none";
     iframe.src = url;
-    iframe.frameBorder = 0;
+    win.document.body.style.border = "0px";
+    win.document.body.style.margin = "0px";
+    win.document.body.style.padding = "0px";
     win.document.body.appendChild(iframe);
   }
   function go(value) {
