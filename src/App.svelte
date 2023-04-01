@@ -170,7 +170,7 @@
             } else {
               document.querySelector("#tab" + newnextid).click();
               
-              go("https://google.com");
+              go("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
             }
           }
           checkIfTabExists();
