@@ -1,10 +1,8 @@
 <script>
   let tabsandiframes = [];
-
   let inputurl;
   let nextid = 1;
   let tabOrder = [];
-
   function isUrl(val = "") {
     if (
       /^http(s?):\/\//.test(val) ||
@@ -71,13 +69,10 @@
       url = "https://" + url;
     let activeIframe = document.querySelector("iframe.active");
     url = __uv$config.encodeUrl(url);
-
     activeIframe.style.display = "block";
     activeIframe.src = "/go/" + url;
-
     inputurl = __uv$config.decodeUrl(url);
   }
-
   function closeTabAndIframe(id) {
     tabsandiframes.splice(tabsandiframes.indexOf(id), 1);
     tabsandiframes = tabsandiframes;
@@ -85,7 +80,6 @@
     tabOrder = tabOrder;
     document.getElementById("tab" + tabOrder.slice(-1)[0]).click();
   }
-
   let tabs = [];
   let iframes = [];
 
@@ -171,6 +165,7 @@
               document.querySelector("#tab" + newnextid).click();
               
               go("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+
             }
           }
           checkIfTabExists();
