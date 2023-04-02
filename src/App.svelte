@@ -164,7 +164,7 @@
             } else {
               document.querySelector("#tab" + newnextid).click();
               
-              go("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+              go("https://google.com");
 
             }
           }
